@@ -1,0 +1,16 @@
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator.deps.json
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator.runtimeconfig.json
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator.runtimeconfig.dev.json
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator.dll
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/ref/Calculator.dll
+/home/fred/revature/fred_repo/week_1/Calculator/bin/Debug/net5.0/Calculator.pdb
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.csproj.AssemblyReference.cache
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.AssemblyInfoInputs.cache
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.AssemblyInfo.cs
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.csproj.CoreCompileInputs.cache
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.dll
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/ref/Calculator.dll
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.pdb
+/home/fred/revature/fred_repo/week_1/Calculator/obj/Debug/net5.0/Calculator.genruntimeconfig.cache
