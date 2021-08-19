@@ -20,18 +20,46 @@ namespace Calculator
   {
     static void Main(string[] args)
     {
+
+      // int x = 10;
+      // long y = x; // implicit casting
+
+      // long x = 10;
+      // int y = (int)x; // checked, unchecked exception, explicit casting
+      // int z = x as int; // null, 0 explicit casting
+
       // input stuff
       // int input1, input2;
 
-      if (Input(out int input1, out int input2))
-      {
-        // compute stuff
-        int result1 = Add(inputs[0], inputs[1]);
-        int result2 = Subtract(inputs[0], inputs[1]);
+      // if (Input(out int input1, out int input2))
+      // {
+      //   // compute stuff
+      //   int result1 = Add(input1, input2);
+      //   int result2 = Subtract(input1, input2);
 
-        // output stuff
-        Print(result1, result2, result1, result2);
-      }
+      //   // output stuff
+      //   Print(result1, result2, result1, result2);
+      // }
+
+      int data = 10; // value type
+      Int32 data2 = new Int32(); // reference
+
+
+      PassByValueNoBoxing(data);
+      System.Console.WriteLine(data); // 10
+
+      PassByValueWithBoxing(ref data);
+      System.Console.WriteLine(data); // 20
+    }
+
+    static void PassByValueNoBoxing(int entry)
+    {
+      entry = 20;
+    }
+
+    static void PassByValueWithBoxing(ref int entry)
+    {
+      entry = 20;
     }
 
     static int Add(int input1, int input2)
@@ -75,7 +103,7 @@ namespace Calculator
       // input stuff
       // int input1, input2;
 
-      if (int.TryParse(Console.ReadLine(), out i1) && int.TryParse(Console.ReadLine(), out i2))
+      if (int.TryParse(Console.ReadLine(), out i1) & int.TryParse(Console.ReadLine(), out i2))
       {
         // i1 = input1;
         // i2 = input2;
