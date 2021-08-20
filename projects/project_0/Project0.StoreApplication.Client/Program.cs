@@ -1,15 +1,16 @@
 ﻿// procedural programming - DONE
 // functional programming lite - DONE
-// object-oriented programming - NEXT
+// object-oriented programming - DONE
 // unit testing - DONE
 // design patterns: singleton, factory - NEXT
-// structure: SOLID - 
-// serialization - 
-// monitoring - 
+// structure: SOLID - NEXT
+// serialization - DONE
+// monitoring - DONE
 // debugging - DONE
 
 using System;
 using Project0.StoreApplication.Storage.Repositories;
+using Serilog;
 
 namespace Project0.StoreApplication.Client
 {
@@ -17,6 +18,8 @@ namespace Project0.StoreApplication.Client
   {
     static void Main(string[] args)
     {
+      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+
       var program = new Program();
 
       program.CaptureOutput();
@@ -24,6 +27,15 @@ namespace Project0.StoreApplication.Client
 
     private void OutputStores()
     {
+      // verbose
+      // debug
+      // info
+      // warn
+      // error
+      // fatal
+
+      Log.Information("mehtod outpoutstores");
+
       var storeRepository = new StoreRepository();
 
       foreach (var store in storeRepository.Stores)
@@ -34,6 +46,8 @@ namespace Project0.StoreApplication.Client
 
     private int CaptureInput()
     {
+      Log.Information("in method captureinput");
+
       OutputStores();
 
       Console.WriteLine("pick a store:");

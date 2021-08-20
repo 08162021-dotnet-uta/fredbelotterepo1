@@ -2,11 +2,11 @@ using Project0.StoreApplication.Domain.Abstracts;
 
 namespace Project0.StoreApplication.Domain.Models
 {
-  public class GroceryStore : Store
+  public class OnlineStore : Store
   {
-    public GroceryStore()
+    public OnlineStore()
     {
-      Name = "Grocery Store";
+      Name = "Online Store";
     }
   }
 }
