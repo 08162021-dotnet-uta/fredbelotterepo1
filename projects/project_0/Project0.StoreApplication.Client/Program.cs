@@ -1,6 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Project0.StoreApplication.Domain.Models;
+﻿// procedural programming - DONE
+// functional programming lite - DONE
+// object-oriented programming - NEXT
+// unit testing - DONE
+// design patterns: singleton, factory - NEXT
+// structure: SOLID - 
+// serialization - 
+// monitoring - 
+// debugging - DONE
+
+using System;
 using Project0.StoreApplication.Storage.Repositories;
 
 namespace Project0.StoreApplication.Client
@@ -9,35 +17,37 @@ namespace Project0.StoreApplication.Client
   {
     static void Main(string[] args)
     {
-      var p = new Program();
+      var program = new Program();
 
-      p.PrintAllStoreLocations();
-
-      System.Console.WriteLine(p.SelectAStore());
+      program.CaptureOutput();
     }
 
-    void PrintAllStoreLocations()
+    private void OutputStores()
     {
       var storeRepository = new StoreRepository();
-      int i = 1;
 
       foreach (var store in storeRepository.Stores)
       {
-        System.Console.WriteLine(i + " - " + store);
-        i += 1;
+        Console.WriteLine(store);
       }
     }
 
-    Store SelectAStore()
+    private int CaptureInput()
     {
-      var sr = new StoreRepository().Stores;
+      OutputStores();
 
-      Console.WriteLine("Select a Store: ");
+      Console.WriteLine("pick a store:");
 
-      var option = int.Parse(Console.ReadLine());
-      var store = sr[option - 1];
+      int selected = int.Parse(Console.ReadLine());
 
-      return store;
+      return selected;
+    }
+
+    private void CaptureOutput()
+    {
+      var storeRepository = new StoreRepository();
+
+      Console.WriteLine("you have selected: " + " " + storeRepository.Stores[CaptureInput()]);
     }
   }
 }
