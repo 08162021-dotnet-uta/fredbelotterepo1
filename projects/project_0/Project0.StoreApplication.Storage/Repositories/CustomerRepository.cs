@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Interfaces;
+using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Adapters;
 
 namespace Project0.StoreApplication.Storage.Repositories
@@ -8,16 +8,16 @@ namespace Project0.StoreApplication.Storage.Repositories
   /// <summary>
   /// 
   /// </summary>
-  public class StoreRepository : IRepository<Store>
+  public class CustomerRepository : IRepository<Customer>
   {
-    private const string _path = @"/home/fred/revature/fred_repo/data/stores.xml";
+    private const string _path = @"/home/fred/revature/fred_repo/data/customers.xml";
     private static readonly FileAdapter _fileAdapter = new FileAdapter();
 
-    public StoreRepository()
+    public CustomerRepository()
     {
-      if (_fileAdapter.ReadFromFile<Store>(_path) == null)
+      if (_fileAdapter.ReadFromFile<Customer>(_path) == null)
       {
-        _fileAdapter.WriteToFile<Store>(_path, new List<Store>());
+        _fileAdapter.WriteToFile<Customer>(_path, new List<Customer>());
       }
     }
 
@@ -34,9 +34,9 @@ namespace Project0.StoreApplication.Storage.Repositories
     /// 
     /// </summary>
     /// <returns></returns>
-    public bool Insert(Store entry)
+    public bool Insert(Customer entry)
     {
-      _fileAdapter.WriteToFile<Store>(_path, new List<Store> { entry });
+      _fileAdapter.WriteToFile<Customer>(_path, new List<Customer> { entry });
 
       return true;
     }
@@ -45,16 +45,16 @@ namespace Project0.StoreApplication.Storage.Repositories
     /// 
     /// </summary>
     /// <returns></returns>
-    public List<Store> Select()
+    public List<Customer> Select()
     {
-      return _fileAdapter.ReadFromFile<Store>(_path);
+      return _fileAdapter.ReadFromFile<Customer>(_path);
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <returns></returns>
-    public Store Update()
+    public Customer Update()
     {
       throw new System.NotImplementedException();
     }

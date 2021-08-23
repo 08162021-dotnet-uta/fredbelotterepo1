@@ -10,6 +10,10 @@ namespace Project0.StoreApplication.Domain.Abstracts
   {
     public string Name { get; set; }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
       return Name;

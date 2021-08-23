@@ -5,35 +5,39 @@ using Project0.StoreApplication.Domain.Abstracts;
 
 namespace Project0.StoreApplication.Storage.Adapters
 {
+  /// <summary>
+  /// 
+  /// </summary>
   public class FileAdapter
   {
-    public F ReadFromFile<F>(string path) where F : class
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public List<T> ReadFromFile<T>(string path) where T : class
     {
-      // open file
+      if (!File.Exists(path))
+      {
+        return null;
+      }
+
       var file = new StreamReader(path);
-      // serialize object
-      var xml = new XmlSerializer(typeof(F));
-      // read from file
-      var result = xml.Deserialize(file) as F;
-      // return data
+      var xml = new XmlSerializer(typeof(List<T>));
+      var result = xml.Deserialize(file) as List<T>;
+
       return result;
     }
 
-    public void WriteToFile(List<Store> stores)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public void WriteToFile<T>(string path, List<T> data) where T : class
     {
-      // file path
-      var path = @"/home/fred/revature/fred_repo/data/project_0.xml";
-      // open file
       var file = new StreamWriter(path);
-      // serialize object
-      var xml = new XmlSerializer(typeof(List<Store>));
-      // write to file
-      xml.Serialize(file, stores);
-    }
+      var xml = new XmlSerializer(typeof(List<T>));
 
-    public void UseReadFile()
-    {
-      ReadFromFile<Store>("path");
+      xml.Serialize(file, data);
     }
   }
 }
