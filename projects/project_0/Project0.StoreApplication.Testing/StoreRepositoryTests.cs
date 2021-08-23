@@ -9,7 +9,7 @@ namespace Project0.StoreApplication.Testing
     public void Test_StoreCollection()
     {
       // arrange = instance of the entity to test
-      var sut = new StoreRepository();
+      var sut = StoreRepository.Instance;
 
       // act = execute sut for data
       var actual = sut.Stores;

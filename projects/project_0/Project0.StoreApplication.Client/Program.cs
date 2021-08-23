@@ -2,8 +2,9 @@
 // functional programming lite - DONE
 // object-oriented programming - DONE
 // unit testing - DONE
-// design patterns: singleton, factory - NEXT
-// structure: SOLID - NEXT
+// generics - DONE
+// design patterns: singleton - DONE
+// structure: SOLID - DONE
 // serialization - DONE
 // monitoring - DONE
 // debugging - DONE
@@ -16,6 +17,8 @@ namespace Project0.StoreApplication.Client
 {
   class Program
   {
+    private static readonly StoreRepository _storeRepository = StoreRepository.Instance;
+
     static void Main(string[] args)
     {
       Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
@@ -36,9 +39,7 @@ namespace Project0.StoreApplication.Client
 
       Log.Information("mehtod outpoutstores");
 
-      var storeRepository = new StoreRepository();
-
-      foreach (var store in storeRepository.Stores)
+      foreach (var store in _storeRepository.Stores)
       {
         Console.WriteLine(store);
       }
@@ -54,14 +55,12 @@ namespace Project0.StoreApplication.Client
 
       int selected = int.Parse(Console.ReadLine());
 
-      return selected;
+      return selected - 1;
     }
 
     private void CaptureOutput()
     {
-      var storeRepository = new StoreRepository();
-
-      Console.WriteLine("you have selected: " + " " + storeRepository.Stores[CaptureInput()]);
+      Console.WriteLine("you have selected: " + " " + _storeRepository.Stores[CaptureInput()]);
     }
   }
 }
