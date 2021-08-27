@@ -8,16 +8,14 @@ namespace Project0.StoreApplication.Domain.Models
   /// </summary>
   public class Customer
   {
+    public byte CustomerId { get; set; }
     public string Name { get; set; }
     public List<Order> Orders { get; set; }
 
-    public object Order1 { get; set; }
-    public Order Order2 { get; set; }
-    public Order Order3 { get; set; }
-
     public Customer()
     {
-      Name = "Sir Net";
+      Name = "Demo User";
+            Orders = new List<Order>();
     }
 
     /// <summary>

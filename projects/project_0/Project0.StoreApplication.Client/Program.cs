@@ -1,26 +1,15 @@
-﻿// procedural programming - DONE
-// functional programming lite - DONE
-// object-oriented programming - DONE
-// unit testing - DONE
-// generics - DONE
-// design patterns: singleton - DONE
-// structure: SOLID - DONE
-// serialization - DONE
-// monitoring - DONE
-// debugging - DONE
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
-using Project0.StoreApplication.Storage.Repositories;
+using Project0.StoreApplication.Storage;
 using Serilog;
 
 namespace Project0.StoreApplication.Client
 {
   /// <summary>
-  /// Defines the Program Class
+  /// 
   /// </summary>
   internal class Program
   {
@@ -36,7 +25,7 @@ namespace Project0.StoreApplication.Client
     {
       Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
 
-      Run();
+      HelloSQL();
     }
 
     /// <summary>
@@ -53,10 +42,6 @@ namespace Project0.StoreApplication.Client
 
       var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
       var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
-      // stores
-      //Output<Store>(_storeSingleton.Stores);
-      // products
-      //Output<Product>(_productSingleton.Products);
 
       Console.WriteLine(customer);
     }
@@ -90,6 +75,17 @@ namespace Project0.StoreApplication.Client
       int selected = int.Parse(Console.ReadLine());
 
       return selected - 1;
+    }
+
+    private static void HelloSQL()
+    {
+      var def = new DemoEF();
+
+      foreach (var item in def.GetCustomers())
+      {
+        Console.WriteLine(item);
+      }
+
     }
   }
 }

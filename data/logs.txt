@@ -24,3 +24,8 @@
 2021-08-23 16:21:53.924 -05:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>()
 2021-08-23 16:22:04.155 -05:00 [INF] method: Capture()
 2021-08-23 16:22:04.155 -05:00 [INF] method: Output<Project0.StoreApplication.Domain.Abstracts.Store>()
+2021-08-25 14:14:39.342 -05:00 [INF] method: Run()
+2021-08-25 14:14:39.948 -05:00 [INF] method: Capture()
+2021-08-25 14:14:39.950 -05:00 [INF] method: Output<Project0.StoreApplication.Domain.Models.Customer>()
+2021-08-25 14:15:45.591 -05:00 [INF] method: Capture()
+2021-08-25 14:15:46.484 -05:00 [INF] method: Output<Project0.StoreApplication.Domain.Abstracts.Store>()
