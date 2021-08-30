@@ -14,7 +14,7 @@ namespace Project0.StoreApplication.Domain.Models
 
     public Customer()
     {
-      Name = "Demo User";
+      Name = "It's Monay and I am tired";
             Orders = new List<Order>();
     }
 

@@ -81,11 +81,12 @@ namespace Project0.StoreApplication.Client
     {
       var def = new DemoEF();
 
+        def.SetCustomer(new Customer());
+
       foreach (var item in def.GetCustomers())
       {
         Console.WriteLine(item);
       }
-
     }
   }
 }
